@@ -3,14 +3,14 @@
 // Producto = Camisa mangas largas
 let camisa_mangas_largas = "camisa mangas largas";
 let precio_camisa_mangas_largas = 1200;
-let codigo_camisa_mangas_largas ="CML12";
+let codigo_camisa_mangas_largas = "CML12";
 
 // Producto = Chomba
 let chomba_vincent = "chomba vincent";
 let precio_chomba = 1000;
 let codigo_chomba = "CH12";
 
-// Producto = Zapatillas 
+// Producto = Zapatillas
 let zapatilla_azul = "zapatilla azul";
 let precio_zapatilla_azul = 1300;
 let codigo_zapatilla_azul = "ZPT12";
@@ -23,32 +23,28 @@ let codigo_reloj_casio = "CSO12";
 // Producto = Bermuda
 let bermuda_verde = "bermuda verde";
 let precio_bermuda_verde = 1900;
-let codigo_bermuda_verde = "BRMVR12"
-
+let codigo_bermuda_verde = "BRMVR12";
 
 // Cliente 1 = compra camisa mangas largas
 let cliente_1 = "CML12";
 let acumulador = 0;
 
 if (codigo_camisa_mangas_largas === "CML12") {
-    acumulador = acumulador + precio_camisa_mangas_largas;
-    console.log("El total a abonar es $" + acumulador);
+  acumulador = acumulador + precio_camisa_mangas_largas;
+  console.log("El total a abonar es $" + acumulador);
 }
 
-
-// Cliente 2 = Compra bermuda / codigo incorrecto 
+// Cliente 2 = Compra bermuda / codigo incorrecto
 let cliente_2 = "BRMVR12";
 let acumulador_2 = 0;
 
 if (cliente_2 === codigo_reloj_casio) {
-    acumulador_2 += precio_reloj_casio;
-    console.log("El total a abonar es $" + acumulador_2);
+  acumulador_2 += precio_reloj_casio;
+  console.log("El total a abonar es $" + acumulador_2);
+} else {
+  acumulador_2 += precio_bermuda_verde;
+  console.log("El total a abonar es $" + acumulador_2);
 }
-else {
-    acumulador_2 += precio_bermuda_verde;
-    console.log("El total a abonar es $" + acumulador_2);
-}
-
 
 // Cliente 3 = compra bermuda, reloj y chomba / todos los codigos correctos
 let cliente_3_bermuda = "BRMVR12";
@@ -56,16 +52,43 @@ let cliente_3_reloj = "CSO12";
 let cliente_3_chomba = "CH12";
 let acumulador_3 = 0;
 
-if ((cliente_3_bermuda === codigo_bermuda_verde) && (cliente_3_reloj === codigo_reloj_casio) && (cliente_3_chomba === codigo_chomba)) {
-    acumulador_3 += precio_bermuda_verde;
-    acumulador_3 += precio_reloj_casio;
-    acumulador_3 += precio_chomba;
-    console.log("El total a abonar es $" + acumulador_3);
-}
-else {
-    console.log("Uno o más códigos es incorrecto");
+if (
+  cliente_3_bermuda === codigo_bermuda_verde &&
+  cliente_3_reloj === codigo_reloj_casio &&
+  cliente_3_chomba === codigo_chomba
+) {
+  acumulador_3 += precio_bermuda_verde;
+  acumulador_3 += precio_reloj_casio;
+  acumulador_3 += precio_chomba;
+  console.log("El total a abonar es $" + acumulador_3);
+} else {
+  console.log("Uno o más códigos es incorrecto");
 }
 
+let efectivo = acumulador_3 - acumulador_3 * 0.2;
+let tarjeta_3_cuotas = acumulador_3 * 1.22;
+let tarjeta_6_cuotas = acumulador_3 * 1.32;
+let tarjeta_12_cuotas = acumulador_3 * 1.4;
+
+if (efectivo) {
+    precio_efectivo = acumulador_3 - (acumulador_3 * 0.2);
+    console.log("El total en efectivo es $" + precio_efectivo);
+}
+
+if (tarjeta_3_cuotas) {
+    precio_tarjeta_3_cuotas = acumulador_3 * 1.22;
+    console.log("El total en 3 cuotas es $" + precio_tarjeta_3_cuotas);
+}
+
+if (tarjeta_6_cuotas) {
+    precio_tarjeta_6_cuotas = acumulador_3 * 1.32;
+    console.log("El total en 6 cuotas es $" + precio_tarjeta_6_cuotas);
+}
+
+if (tarjeta_12_cuotas) {
+    precio_tarjeta_12_cuotas = acumulador_3 * 1.40;
+    console.log("El total en 12 cuotas es $" + precio_tarjeta_12_cuotas);
+}
 
 /*
 let cliente_3_bermuda = "BRMVR12";
@@ -84,6 +107,4 @@ else {
 }
     
     AL TENER UN CÓDIGO INCORRECTO SE EJECUTA EL SEGUNDO BLOQUE
-*/     
-
-
+*/
